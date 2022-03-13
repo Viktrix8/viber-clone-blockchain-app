@@ -1,8 +1,14 @@
-import '../styles/globals.css'
+import { ViberProvider } from '../context/ViberContext'
 import type { AppProps } from 'next/app'
 
+import '../styles/globals.css'
+
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ViberProvider>
+      <Component {...pageProps} />
+    </ViberProvider>
+  )
 }
 
 export default MyApp
